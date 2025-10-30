@@ -2,9 +2,9 @@ import { Facebook, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] py-12 px-6 border-t border-[#1a1a1a]">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-5 gap-8 mb-8">
+    <footer className="border-t border-[#1a1a1a] bg-[#0a0a0a] px-4 py-12 sm:px-6">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-8 grid gap-8 sm:grid-cols-2 md:grid-cols-5">
           {/* Logo & Social */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
@@ -218,18 +218,18 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-6 border-t border-[#1a1a1a] flex flex-col md:flex-row justify-between items-center gap-3">
-          <p className="text-[#525252] text-xs">
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-[#1a1a1a] pt-6 text-center md:flex-row md:text-left">
+          <p className="text-xs text-[#525252]">
             © 2025 NovaLink Satellite Internet. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-[#525252] text-xs">
-            <a href="#" className="hover:text-white transition-colors">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-[#525252] md:justify-end">
+            <a href="#" className="transition-colors hover:text-white">
               Sitemap
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="#" className="transition-colors hover:text-white">
               Accessibility
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="#" className="transition-colors hover:text-white">
               Partner Program
             </a>
           </div>

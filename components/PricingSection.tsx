@@ -65,55 +65,48 @@ export function PricingSection() {
   return (
     <section
       id="pricing"
-      className="py-24 px-6 relative bg-black border-t border-[#1a1a1a]"
+      className="relative border-t border-[#1a1a1a] bg-black px-4 py-20 sm:px-6 sm:py-24"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-block px-3 py-1.5 rounded-full bg-[#10b981]/10 border border-[#10b981]/20 mb-4">
-            <span className="text-[#10b981] font-semibold text-xs uppercase tracking-wider">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-12 text-center">
+          <div className="mb-4 inline-block rounded-full border border-[#10b981]/20 bg-[#10b981]/10 px-3 py-1.5">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#10b981]">
               Transparent Pricing
             </span>
           </div>
-          <h2 className="text-4xl font-black text-white mb-4">
+          <h2 className="mb-4 text-3xl font-black text-white sm:text-4xl">
             Choose Your <span className="text-[#10b981]">Perfect Plan</span>
           </h2>
-          <p className="text-base text-[#a3a3a3] max-w-2xl mx-auto mb-6">
+          <p className="mx-auto mb-6 max-w-2xl text-sm text-[#a3a3a3] sm:text-base">
             All plans include unlimited data, no contracts, and 30-day
             money-back guarantee
           </p>
 
           {/* Urgency Banner */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#10b981]/10 border border-[#10b981]/30">
-            <Zap className="w-3.5 h-3.5 text-[#10b981]" />
-            <span className="text-[#10b981] font-semibold text-xs">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#10b981]/30 bg-[#10b981]/10 px-4 py-2 text-left">
+            <Zap className="h-3.5 w-3.5 text-[#10b981]" />
+            <span className="text-xs font-semibold text-[#10b981]">
               Limited Time: Free installation on all plans (Save $299)
             </span>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="mb-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {plans.map((plan, index) => (
+            // eslint-disable-next-line react/no-array-index-key
             <div
               key={index}
-              className={`relative rounded-2xl transition-all duration-300 ${
-                plan.highlighted ? "scale-105 z-10" : "scale-100"
-              }`}
-              style={{
-                transform:
-                  hoveredIndex === index
-                    ? "translateY(-8px) scale(1.03)"
-                    : plan.highlighted
-                    ? "scale(1.03)"
-                    : "scale(1)",
-              }}
+              className={`relative rounded-2xl transition-transform duration-300 ${
+                hoveredIndex === index ? "md:-translate-y-2 md:scale-[1.02]" : ""
+              } ${plan.highlighted ? "xl:z-10 xl:scale-[1.03]" : ""}`}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               {/* Popular Badge */}
               {plan.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
-                  <div className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-gradient-to-r from-[#10b981] to-[#059669] text-white font-bold text-[10px] uppercase tracking-wider shadow-lg">
-                    <Star className="w-3 h-3 fill-white" />
+                <div className="absolute -top-3 left-1/2 z-20 -translate-x-1/2">
+                  <div className="flex items-center gap-1 rounded-full bg-gradient-to-r from-[#10b981] to-[#059669] px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-lg">
+                    <Star className="h-3 w-3 fill-white" />
                     Most Popular
                   </div>
                 </div>
@@ -122,56 +115,56 @@ export function PricingSection() {
               <div
                 className={`h-full p-6 rounded-2xl border-2 ${
                   plan.highlighted
-                    ? "bg-gradient-to-br from-[#10b981]/10 to-[#059669]/10 border-[#10b981] shadow-[0_0_40px_rgba(16,185,129,0.3)]"
-                    : "bg-[#0a0a0a] border-[#1a1a1a] hover:border-[#10b981]/30"
+                    ? "border-[#10b981] bg-gradient-to-br from-[#10b981]/10 to-[#059669]/10 shadow-[0_0_40px_rgba(16,185,129,0.25)]"
+                    : "border-[#1a1a1a] bg-[#0a0a0a] transition-colors hover:border-[#10b981]/30"
                 } transition-all duration-300`}
               >
                 {/* Savings Tag */}
                 {plan.savings && (
                   <div className="mb-3">
-                    <span className="inline-block px-2 py-1 rounded-full bg-[#10b981]/20 text-[#10b981] font-bold text-[10px]">
+                    <span className="inline-block rounded-full bg-[#10b981]/20 px-2 py-1 text-[10px] font-bold text-[#10b981]">
                       {plan.savings}
                     </span>
                   </div>
                 )}
 
-                <h3 className="text-xl font-black text-white mb-1">
+                <h3 className="mb-1 text-lg font-black text-white sm:text-xl">
                   {plan.name}
                 </h3>
-                <p className="text-xs text-[#737373] mb-4">{plan.tagline}</p>
+                <p className="mb-4 text-xs text-[#737373]">{plan.tagline}</p>
 
                 <div className="mb-5">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-black text-white">
+                    <span className="text-3xl font-black text-white sm:text-4xl">
                       {plan.price}
                     </span>
-                    <span className="text-[#737373] font-medium text-sm">
+                    <span className="text-sm font-medium text-[#737373]">
                       /month
                     </span>
                   </div>
-                  <p className="text-xs text-[#a3a3a3] mt-1">
+                  <p className="mt-1 text-xs text-[#a3a3a3]">
                     {plan.description}
                   </p>
                 </div>
 
                 <Button
-                  className={`w-full mb-6 rounded-xl py-5 font-bold text-sm ${
+                  className={`mb-6 w-full rounded-xl py-4 text-sm font-bold ${
                     plan.highlighted
-                      ? "bg-gradient-to-r from-[#10b981] to-[#059669] hover:from-[#059669] hover:to-[#047857] text-white glow-button shadow-lg"
-                      : "bg-white/5 hover:bg-white/10 text-white border-2 border-[#1a1a1a] hover:border-[#10b981]/50"
+                      ? "bg-gradient-to-r from-[#10b981] to-[#059669] text-white shadow-lg shadow-[#10b981]/30 transition hover:from-[#059669] hover:to-[#047857]"
+                      : "border-2 border-[#1a1a1a] bg-white/5 text-white transition hover:border-[#10b981]/40 hover:bg-white/10"
                   }`}
                   size="lg"
                 >
                   {plan.cta}
                 </Button>
 
-                <ul className="space-y-3">
+                <ul className="space-y-3 text-sm">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-2">
                       <div className="mt-0.5">
-                        <Check className="w-4 h-4 text-[#10b981] shrink-0" />
+                        <Check className="h-4 w-4 shrink-0 text-[#10b981]" />
                       </div>
-                      <span className="text-[#a3a3a3] text-xs leading-relaxed">
+                      <span className="text-xs leading-relaxed text-[#a3a3a3]">
                         {feature}
                       </span>
                     </li>
@@ -183,18 +176,18 @@ export function PricingSection() {
         </div>
 
         {/* Trust Footer */}
-        <div className="text-center space-y-3">
-          <div className="flex items-center justify-center gap-6 text-xs text-[#737373] flex-wrap">
+        <div className="space-y-3 text-center">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-[#737373] sm:gap-6">
             <div className="flex items-center gap-1.5">
-              <Check className="w-3.5 h-3.5 text-[#10b981]" />
+              <Check className="h-3.5 w-3.5 text-[#10b981]" />
               <span>30-day money-back guarantee</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Check className="w-3.5 h-3.5 text-[#10b981]" />
+              <Check className="h-3.5 w-3.5 text-[#10b981]" />
               <span>Cancel anytime, no fees</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Check className="w-3.5 h-3.5 text-[#10b981]" />
+              <Check className="h-3.5 w-3.5 text-[#10b981]" />
               <span>Free shipping & installation</span>
             </div>
           </div>

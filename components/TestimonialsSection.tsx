@@ -67,75 +67,75 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-24 px-6 relative bg-[#0a0a0a] border-t border-[#1a1a1a]">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="inline-block px-3 py-1.5 rounded-full bg-[#10b981]/10 border border-[#10b981]/20 mb-4">
-            <span className="text-[#10b981] font-semibold text-xs uppercase tracking-wider">
+    <section className="relative border-t border-[#1a1a1a] bg-[#0a0a0a] px-4 py-20 sm:px-6 sm:py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-14 text-center sm:mb-16">
+          <div className="mb-4 inline-block rounded-full border border-[#10b981]/20 bg-[#10b981]/10 px-3 py-1.5">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#10b981]">
               Customer Reviews
             </span>
           </div>
-          <h2 className="text-4xl font-black text-white mb-4">
+          <h2 className="mb-4 text-3xl font-black text-white sm:text-4xl">
             Trusted by <span className="text-[#10b981]">250,000+</span> Happy
             Customers
           </h2>
-          <p className="text-base text-[#a3a3a3] max-w-2xl mx-auto mb-6">
+          <p className="mx-auto mb-6 max-w-2xl text-sm text-[#a3a3a3] sm:text-base">
             Real stories from real people who made the switch to NovaLink
           </p>
 
           {/* Overall Rating */}
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-2 text-sm">
             <div className="flex items-center gap-0.5">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className="w-4 h-4 text-[#10b981] fill-[#10b981]"
+                  className="h-4 w-4 fill-[#10b981] text-[#10b981]"
                 />
               ))}
             </div>
-            <span className="text-xl font-bold text-white">4.9</span>
+            <span className="text-lg font-bold text-white sm:text-xl">4.9</span>
             <span className="text-sm text-[#737373]">out of 5</span>
             <span className="text-[#525252]">•</span>
             <span className="text-sm text-[#737373]">12,847 reviews</span>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-black border-2 border-[#1a1a1a] rounded-2xl p-6 hover:border-[#10b981]/30 transition-all duration-300 group hover:scale-105"
+              className="group rounded-2xl border-2 border-[#1a1a1a] bg-black p-6 transition-all duration-300 hover:border-[#10b981]/30 hover:shadow-[0_16px_30px_rgba(16,185,129,0.15)] sm:hover:scale-[1.02]"
             >
               {/* Rating */}
-              <div className="flex items-center gap-0.5 mb-3">
+              <div className="mb-3 flex items-center gap-0.5">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-3.5 h-3.5 text-[#10b981] fill-[#10b981]"
+                    className="h-3.5 w-3.5 fill-[#10b981] text-[#10b981]"
                   />
                 ))}
               </div>
 
               {/* Quote */}
-              <Quote className="w-6 h-6 text-[#10b981]/20 mb-2" />
-              <p className="text-white text-sm leading-relaxed mb-5 font-medium">
+              <Quote className="mb-2 h-6 w-6 text-[#10b981]/20" />
+              <p className="mb-5 text-sm font-medium leading-relaxed text-white">
                 "{testimonial.quote}"
               </p>
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#10b981] to-[#059669] flex items-center justify-center text-white font-bold text-xs shrink-0">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#10b981] to-[#059669] text-xs font-bold text-white">
                   {testimonial.avatar}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5">
-                    <p className="text-white font-bold text-xs truncate">
+                    <p className="truncate text-xs font-bold text-white">
                       {testimonial.author}
                     </p>
                     {testimonial.verified && (
-                      <div className="shrink-0 w-3.5 h-3.5 rounded-full bg-[#10b981] flex items-center justify-center">
+                      <div className="flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-[#10b981]">
                         <svg
-                          className="w-2.5 h-2.5 text-white"
+                          className="h-2.5 w-2.5 text-white"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -148,10 +148,10 @@ export function TestimonialsSection() {
                       </div>
                     )}
                   </div>
-                  <p className="text-[#737373] text-[10px] truncate">
+                  <p className="truncate text-[10px] text-[#737373]">
                     {testimonial.role}
                   </p>
-                  <p className="text-[#525252] text-[10px] truncate">
+                  <p className="truncate text-[10px] text-[#525252]">
                     {testimonial.location}
                   </p>
                 </div>
@@ -162,10 +162,10 @@ export function TestimonialsSection() {
 
         {/* CTA */}
         <div className="text-center">
-          <p className="text-[#a3a3a3] mb-4 text-sm">
+          <p className="mb-4 text-sm text-[#a3a3a3]">
             Join thousands of satisfied customers making the switch
           </p>
-          <button className="bg-gradient-to-r from-[#10b981] to-[#059669] hover:from-[#059669] hover:to-[#047857] text-white px-8 py-3 rounded-xl font-bold text-sm glow-button transition-all">
+          <button className="rounded-xl bg-gradient-to-r from-[#10b981] to-[#059669] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#10b981]/20 transition hover:from-[#059669] hover:to-[#047857]">
             Start Your Free Trial →
           </button>
         </div>

@@ -5,7 +5,7 @@ import { Globe, Satellite, CheckCircle2, Users, Zap } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a1f1a] pt-20">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0a1f1a] px-4 pt-28 pb-16 sm:px-6 md:pt-32">
       {/* Aurora-Style Horizontal Gradient Background */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Base dark gradient */}
@@ -93,10 +93,10 @@ export function HeroSection() {
         ></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-0 sm:px-4">
         <div className="text-center">
           {/* Refined Headline */}
-          <h1 className="text-6xl md:text-7xl font-black text-white mb-8 max-w-5xl mx-auto leading-[1.1]">
+          <h1 className="mx-auto mb-8 max-w-4xl text-4xl font-black leading-[1.15] text-white sm:text-5xl md:max-w-5xl md:text-6xl lg:text-7xl">
             Blazing-Fast Internet.
             <br />
             <span className="bg-gradient-to-r from-[#10b981] via-[#34d399] to-[#10b981] bg-clip-text text-transparent">
@@ -105,7 +105,7 @@ export function HeroSection() {
           </h1>
 
           {/* Balanced Subheadline */}
-          <p className="text-lg md:text-xl text-[#a3a3a3] mb-16 max-w-2xl mx-auto leading-relaxed">
+          <p className="mx-auto mb-12 max-w-2xl text-base leading-relaxed text-[#a3a3a3] sm:text-lg md:mb-16 md:text-xl">
             Get satellite internet speeds up to{" "}
             <span className="text-white font-semibold">200 Mbps</span> in the
             world's most remote locations.
@@ -116,40 +116,40 @@ export function HeroSection() {
           </p>
 
           {/* Top Row - Trust Indicators */}
-          <div className="flex items-center justify-center gap-8 mb-20 flex-wrap text-sm text-[#a3a3a3]">
+          <div className="mb-16 flex flex-wrap items-center justify-center gap-5 text-sm text-[#a3a3a3] sm:gap-8 md:mb-20">
             <div className="flex items-center gap-2.5">
-              <CheckCircle2 className="w-4 h-4 text-[#10b981]" />
+              <CheckCircle2 className="h-4 w-4 text-[#10b981]" />
               <span>99.9% Uptime</span>
             </div>
             <div className="flex items-center gap-2.5">
-              <Users className="w-4 h-4 text-[#10b981]" />
+              <Users className="h-4 w-4 text-[#10b981]" />
               <span>250K+ Users</span>
             </div>
             <div className="flex items-center gap-2.5">
-              <Zap className="w-4 h-4 text-[#10b981]" />
+              <Zap className="h-4 w-4 text-[#10b981]" />
               <span>5-Min Setup</span>
             </div>
           </div>
 
           {/* Middle Section - CTA Buttons with Large Spacing */}
-          <div className="flex items-center justify-center gap-12 mb-20 flex-wrap">
+          <div className="mb-16 flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:mb-20">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-[#10b981] to-[#059669] hover:from-[#059669] hover:to-[#047857] text-white rounded-xl px-10 py-6 text-base font-bold glow-button shadow-lg shadow-[#10b981]/30"
+              className="rounded-xl bg-gradient-to-r from-[#10b981] to-[#059669] px-8 py-5 text-sm font-bold text-white shadow-lg shadow-[#10b981]/30 transition hover:from-[#059669] hover:to-[#047857] sm:px-10 sm:text-base"
             >
               Start Free Trial →
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-[#10b981]/40 text-white hover:bg-[#10b981]/10 rounded-xl px-10 py-6 text-base font-semibold backdrop-blur-sm"
+              className="rounded-xl border-2 border-[#10b981]/40 px-8 py-5 text-sm font-semibold text-white transition hover:bg-[#10b981]/10 sm:px-10 sm:text-base"
             >
               View Coverage Map
             </Button>
           </div>
 
           {/* Bottom Row - Guarantee Statements */}
-          <div className="flex items-center justify-center gap-6 flex-wrap text-xs text-[#525252]">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-[#525252] sm:gap-6">
             <div className="flex items-center gap-2">
               <span className="text-[#10b981]">✓</span>
               <span>30-day money-back guarantee</span>
@@ -167,15 +167,15 @@ export function HeroSection() {
           </div>
 
           {/* Social Proof - More Spacing Below */}
-          <div className="flex items-center justify-center gap-6 flex-wrap opacity-30 hover:opacity-50 transition-opacity mt-20">
+          <div className="mt-16 flex flex-wrap items-center justify-center gap-4 opacity-30 transition-opacity hover:opacity-50 sm:gap-6 md:mt-20">
             <p className="text-[10px] text-[#525252] uppercase tracking-wider font-semibold">
               Featured In:
             </p>
-            <div className="flex items-center gap-6 text-sm">
-              <div className="text-[#737373] font-semibold">TechCrunch</div>
-              <div className="text-[#737373] font-semibold">Wired</div>
-              <div className="text-[#737373] font-semibold">Forbes</div>
-              <div className="text-[#737373] font-semibold">Verge</div>
+            <div className="flex items-center gap-4 text-[11px] font-semibold text-[#737373] sm:text-sm sm:gap-6">
+              <div>TechCrunch</div>
+              <div>Wired</div>
+              <div>Forbes</div>
+              <div>Verge</div>
             </div>
           </div>
         </div>

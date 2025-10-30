@@ -56,44 +56,44 @@ export function FAQSection() {
   return (
     <section
       id="faq"
-      className="py-24 px-6 relative bg-black border-t border-[#1a1a1a]"
+      className="relative border-t border-[#1a1a1a] bg-black px-4 py-20 sm:px-6 sm:py-24"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-block px-3 py-1.5 rounded-full bg-[#10b981]/10 border border-[#10b981]/20 mb-4">
-            <span className="text-[#10b981] font-semibold text-xs uppercase tracking-wider">
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-12 text-center">
+          <div className="mb-4 inline-block rounded-full border border-[#10b981]/20 bg-[#10b981]/10 px-3 py-1.5">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#10b981]">
               FAQ
             </span>
           </div>
-          <h2 className="text-4xl font-black text-white mb-4">
+          <h2 className="mb-4 text-3xl font-black text-white sm:text-4xl">
             Common <span className="text-[#10b981]">Questions</span>
           </h2>
-          <p className="text-base text-[#a3a3a3] max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-sm text-[#a3a3a3] sm:text-base">
             Everything you need to know about NovaLink satellite internet
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="mx-auto max-w-3xl">
           <div className="space-y-3">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="border-2 border-[#1a1a1a] rounded-xl overflow-hidden bg-[#0a0a0a] backdrop-blur-sm transition-all duration-300 hover:border-[#10b981]/30"
+                className="overflow-hidden rounded-xl border-2 border-[#1a1a1a] bg-[#0a0a0a] backdrop-blur-sm transition-all duration-300 hover:border-[#10b981]/30"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-5 text-left group"
+                  className="group flex w-full items-center justify-between px-4 py-4 text-left sm:px-5"
                 >
-                  <span className="text-base text-white font-bold pr-4">
+                  <span className="pr-4 text-sm font-bold text-white sm:text-base">
                     {faq.question}
                   </span>
                   <div
-                    className={`shrink-0 w-7 h-7 rounded-full bg-[#10b981]/10 flex items-center justify-center transition-all duration-300 ${
+                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#10b981]/10 transition-all duration-300 ${
                       openIndex === index ? "rotate-180 bg-[#10b981]" : ""
                     }`}
                   >
                     <ChevronDown
-                      className={`w-4 h-4 transition-colors duration-300 ${
+                      className={`h-4 w-4 transition-colors duration-300 ${
                         openIndex === index ? "text-white" : "text-[#10b981]"
                       }`}
                     />
@@ -106,8 +106,8 @@ export function FAQSection() {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <div className="px-5 pb-5">
-                    <p className="text-[#a3a3a3] text-sm leading-relaxed">
+                  <div className="px-4 pb-4 sm:px-5 sm:pb-5">
+                    <p className="text-sm leading-relaxed text-[#a3a3a3]">
                       {faq.answer}
                     </p>
                   </div>
@@ -117,14 +117,14 @@ export function FAQSection() {
           </div>
 
           {/* Still have questions CTA */}
-          <div className="mt-8 text-center p-6 rounded-2xl border-2 border-[#10b981]/20 bg-gradient-to-br from-[#10b981]/5 to-transparent">
-            <h3 className="text-xl font-bold text-white mb-2">
+          <div className="mt-8 rounded-2xl border-2 border-[#10b981]/20 bg-gradient-to-br from-[#10b981]/5 to-transparent p-6 text-center">
+            <h3 className="mb-2 text-lg font-bold text-white sm:text-xl">
               Still have questions?
             </h3>
-            <p className="text-[#a3a3a3] text-sm mb-4">
+            <p className="mb-4 text-sm text-[#a3a3a3]">
               Our support team is here to help 24/7
             </p>
-            <button className="bg-[#10b981] hover:bg-[#059669] text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition-all">
+            <button className="rounded-lg bg-[#10b981] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#059669]">
               Contact Support
             </button>
           </div>
